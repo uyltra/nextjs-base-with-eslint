@@ -1,0 +1,38 @@
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "preset-env": {
+          "useBuiltIns": "usage",
+          "corejs": {
+            "version": "3",
+            "proposals": true
+          }
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "styled-components",
+      {
+        "ssr": true
+      }
+    ],
+    [
+      "module-resolver",
+      {
+        "alias": {
+          "@components": "./src/components"
+          // "@ui": "./src/components/ui"
+        }
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "presets": [["@babel/preset-env", { "modules": false }], "next/babel"]
+    }
+  }
+}
